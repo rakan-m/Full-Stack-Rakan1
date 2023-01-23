@@ -5,12 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complex_Form</title>
+    <style>
+    .number{
+    position: relative;
+}
+
+    .number:after,
+    .number:before {
+    position: absolute;
+    right: 5px;
+    width: 1.6em;
+    height: .9em;
+    font-size: 10px;
+    pointer-events: none;
+    background: #fff;
+}
+
+   .number:after {
+   color: blue;
+   content: "\25B2";
+   margin-top: 1px;
+}
+
+       .number:before {
+       color: red;
+       content: "\25BC";
+       margin-bottom: 5px;
+       bottom: -.5em;
+}
+        .ss{
+           color: red;
+         }
+         .f-family{
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+           font-size: 10px;
+         }
+         .back1{
+            background-color: rgb(194, 229, 243);
+         }
+         .back2{
+            background-color: rgb(209, 234, 243);
+         }
+         .back3{
+            background-color:rgb(233, 242, 243);
+         }
+    </style>
 </head>
 <body>
     <div>
  <table width="60%"> <tr>
-    <td> <label for="title"><b>Title:</b></label></td>
-      <td> <label for="short"><b>Short Title:</b></label></td>
+    <td> <label for="title"><b>Title:<span class="ss">*</span></b></label></td>
+      <td> <label for="short"><b>Short Title:<span class="ss">*</span></b></label></td>
       <td><label for="subj"><b>Subj.:</b></label></td>
       <td><label for="num"><b>Num.:</b></label></td>
       <td><label for="sec"><b>Section.:</b></label></td>
@@ -19,38 +64,41 @@
       <tr>
         <td><input type="text" name="title" size="50" value="Astronomy for poets" required></td>
         <td><input type="text" name="short" size="25" value="Astr. for Poets" required></td>
-        <td>BLST</td>
+        <td class="f-family">BLST</td>
         <td><input type="number" style="width:3em" name="num" size="2" min="10" value="10"></td>
         <td><input type="number" style="width:3em" name="sec" size="2" min="1" value="01"></td>
-        <td>0910</td>
+        <td class="f-family">0910</td>
       </tr>
  </table>
     </div>
     <div>
         <table style="border:1px solid;" width="80%">
             <tr>
-                <td>
+                <td class="back1">
                     <input type="checkbox" value="enrolimit"><label>Enrollment-limit</label>
                 </td>
-                <td>
+                <td class="back1">
                     <label for="num1"><b>Num.:</b></label><br><input type="number" style="width:3em" name="num1">
                 </td>
-                <td>
+                <td class="back1">
                     <label for="rat"><b>Rationale:</b></label><br><input type="text" size="50" name="rat">
                 </td>
-                <td rowspan="5">
+                <td rowspan="7" class="back2">
                     <label for="cmeet"><b>Class Meetings/Week:</b></label><br>
-                    <input type="number" style="width:2em" min="1" name="cmeet" value="1"><br>
+                    <span class="number">
+                        <input type="number" style="width:2em" min="1" name="cmeet" value="1"></span><br>
                     <br><label for="hweek"><b>Class Hours/Week:</b></label><br>
-                    <input type="number" style="width:2em" min="10" name="hweek" value="0"><br><br>
+                    <span class="number">
+                        <input type="number" style="width:2em" min="10" name="hweek" value="0"></span><br><br>
                     Semester(s) Offered:<br>
-                    <input type="number" style="width:5em" name="sem" placeholder="- None -" min="0" max="6"><br><br>
+                    <span class="number">
+                        <input type="number" style="width:5em" name="sem" placeholder="- None -" min="0" max="6"></span><br><br>
 
-                    <input type="checkbox" value="incl" checked><label for="incl">Incl. semester in prereqs.</label><br><br>
-                    <input type="checkbox" value="once"><label for="once">Offered only once</label><br><br>
-                    <input type="checkbox" value="cata"><label for="cata">Incl.in printed catalog</label>
+                    <input type="checkbox" value="inclInPre" checked><label for="inclInPre">Incl. semester in prereqs.</label><br><br>
+                    <input type="checkbox" value="only once"><label for="only once">Offered only once</label><br><br>
+                    <input type="checkbox" value="catalog"><label for="catalog">Incl.in printed catalog</label>
                 </td>
-                <td rowspan="5">
+                <td rowspan="7" class="back3">
                      <label for="keyword"><b>Keywords:</b></label><br>
                      <input type="checkbox" value="sfnm"><label for="sfnm">Science for non majors</label><br><br>
                      <input type="checkbox" value="fafnm"><label for="fafnm">Fine arts for non-majors</label><br><br>
@@ -62,7 +110,7 @@
                      <input type="checkbox" value="int"><label for="int">Writing intensive</label>
                 </td>
             </tr>
-            <tr>
+            <tr class="back3">
                 <td>
                 <input type="checkbox" value="conreq"><label for="conreq">Consent Required</label>
                 </td>
@@ -70,26 +118,26 @@
                 <td><label for="rat2"><b>Rationale:</b></label><br><input type="text" size="50" name="rat2"></td>
             </tr>
             <tr>
-                <td>
+                <td class="back1">
                     <input type="checkbox" value="lcl"><label for="lcl">Limit Class Level</label>
                     </td>
-                    <td><label for="cod"><b>Code:</b></label><br><input type="text" size="2.5" name="cod"></td>
-                    <td><label for="rat3"><b>Rationale:</b></label><br><input type="text" size="50" name="rat3"></td></tr>
-                    <tr><td></td><td></td>
+                    <td class="back1"><label for="cod"><b>Code:</b></label><br><input type="text" size="2.5" name="cod"></td>
+                    <td class="back1"><label for="rat3"><b>Rationale:</b></label><br><input type="text" size="50" name="rat3"></td></tr>
+                    <tr class="back1"><td></td><td></td>
                     <td> 
                     <label for="handle"><b>How to handle over-enrollment:</b></label><br><input type="text" size="50" name="handle">
-                 </td>
+                 </td></div>
               </tr>
-              <tr>
+              <tr class="back3">
                 <td>
                     <input type="checkbox" value="preq"><label for="preq">Prerequisite</label>
                 </td>
                 <td></td>
                 <td><label for="rat4"><b>Rationale:</b></label><br><input type="text" size="50" name="rat4"></td></tr>
-                <tr><td></td><td></td>
+                <tr class="back3"><td></td><td></td>
                 <td><label for="majcor"><b>Required prereqs.(major,course):</b></label><br><input type="text" size="50" name="majcor"></td>
                 </tr>
-                <tr><td></td><td></td>
+                <tr class="back3"><td></td><td></td>
                 <td><label for="recper"><b>Recommended prereqs.:</b></label><br><input type="text" size="50" name="recper"></td>
                </tr>
         </table>
