@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1 align="center" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Kill The Monster</h1>
+    </div>
+
+    <div class="container1" align="center">
+        <h2 align="center" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><b>Monster Health</b></h2>
+
+        <div>
+            <progress id="mHealth" value="100" max="100"></progress>
+        </div>
+
+    </div>
+
+    <div class="container2" align="center">
+        <h2 align="center" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><b>Your Health</b></h2>
+
+        <div>
+            <progress id="yHealth" value="100" max="100"></progress>
+        </div>
+
+    </div><br>
+
+    <table id="tble">
+        <tr>
+            <th align="center"><input type="button" onclick = "attack()" class="button" value="ATTACK"></th><th></th><th></th>
+            <th align="center"><input type="button" onclick = "special()" class="button" value="SPECIAL ATTACK"></th>
+        </tr>
+        <tr></tr>
+        <tr>
+            <th align="center"><input type="button" onclick = "heal()" class="button" value="HEAL"></th><th></th><th></th>
+            <th align="center"><input type="button" onclick = "giveUp()" class="button" value="GIVE UP"></th>
+        </tr>
+    </table><br>
+
+    <div class="container3">
+
+        <h2 align="center" id="log" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><b>Battle Log</b></h2>
+
+        <div id="result">
+       
+        </div>
+        <div align="center" id="test">
+            
+        </div><br>
+    </div>
+    
+    <script src="monster.js"></script>
+</body>
+</html>
